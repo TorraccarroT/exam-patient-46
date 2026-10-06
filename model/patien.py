@@ -6,8 +6,8 @@ from db import Base
 class Patien(Base):
     __tablename__ = "patient"
     id = Column(Integer, primary_key=True, index=True)
-    hn = Column(String(9), index=True,nullable=False)
-    cid = Column(String(13), index=True)
+    hn = Column(String(9), index=True,nullable=False,unique=True)
+    cid = Column(String(13), index=True,unique=True)
     prefix = Column(String(20), index=True)
     first_name = Column(String(100))
     last_name = Column(String(100))
